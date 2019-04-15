@@ -1,0 +1,37 @@
+server:
+    port: 8080
+
+spring:
+  http:
+    multipart:
+      max-file-size: 10Mb
+      max-request-size: 15Mb
+
+zuul:
+  prefix: /api
+  strip-prefix: true
+  routes:
+    wechat-script-service:
+      path: /wechat-script-service/**
+      serviceId: wechat-script-service
+    wechat-script-api:
+      path: /wechat/script/**
+      serviceId: wechat-script-service
+      strip-prefix: false
+
+
+logging:
+  file: .log/gateway.log
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 90000
+
+ribbon:
+  ReadTimeout: 90000
+  ConnectTimeout: 90000
+
