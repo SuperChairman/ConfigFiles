@@ -10,14 +10,14 @@ spring:
 zuul:
   prefix: /api
   strip-prefix: true
-  routes:
-    wechat-script-service:
-      path: /wechat-script-service/**
-      serviceId: wechat-script-service
-    wechat-script-api:
-      path: /wechat/script/**
-      serviceId: wechat-script-service
-      strip-prefix: false
+#  routes:
+#    wechat-script-service:
+#      path: /wechat-script-service/**
+#      serviceId: wechat-script-service
+#    wechat-script-api:
+#      path: /wechat/script/**
+#      serviceId: wechat-script-service
+#      strip-prefix: false
 
 
 logging:
