@@ -14,9 +14,15 @@ zuul:
     config-server:
       path: /config-server/**
       serviceId: config-server
-    wechat-script-api:
+    config-server-api:
       path: /config/server/**
       serviceId: config-server
+      strip-prefix: false
+    core-test:
+      path: /core-test/**
+    core-test-api:
+      path: /core/test/**
+      serviceId: core-test
       strip-prefix: false
 
 
